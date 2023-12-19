@@ -1,0 +1,277 @@
+// Import Montserrat font
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+//CUSTOM VARIABLES
+
+//Colors
+$primary: #038AFF;
+$secondary: #FEBD3D;
+$success: #5AC9A6;
+$info: #1D1348;
+$dark: #08141f;
+
+$theme-colors: (
+  "primary": $primary,
+  "secondary": $secondary,
+  "success": $success,
+  "info": $info,
+  "dark": $dark,
+);
+
+// Body Color
+$body-color: map-get($theme-colors, "dark");
+
+//Navbar
+$navbar-dark-color: rgba(#fff, 1);
+$navbar-nav-link-padding-x: 1rem;
+
+//Border
+$border-width: 2px;
+
+$custom-border-opacity: 0.2;
+
+//Border radius
+$border-radius: .6rem;
+$border-radius-lg: 1.2rem;
+$border-radius-sm: .3rem;
+
+//Font & Text
+$font-family-base: Montserrat, sans-serif;
+$font-weight-normal: 500;
+$font-weight-bold: 600;
+
+//Paragraph
+$paragraph-margin-bottom:0;
+
+//Buttons
+$btn-font-weight: 600;
+
+$input-btn-padding-y:0.5rem;
+$input-btn-padding-x:1rem;
+
+$input-btn-focus-box-shadow: none;
+
+$btn-border-radius: 0.2rem;
+
+//Card
+$card-spacer-y: 0rem;
+$card-border-color: rgba($dark, .05);
+
+//Box shadow
+$box-shadow: 0 .5rem 1rem rgba($dark, .07);
+
+//Badges
+$badge-border-radius: 0.3rem;
+$badge-padding-y: .5em;
+$badge-padding-x: .5em;
+
+//Links
+$link-decoration: none;
+$link-hover-decoration: none;
+
+//Progress
+$progress-height: 0.1rem;
+
+
+
+//import bootstrap
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+
+:root{
+    font-size: 14px;
+}
+
+.btn {
+    i {
+        margin-left: 0.8rem;
+    }
+}
+
+
+.avatars{
+
+    span{
+        position: relative;
+        border: 4px solid #fff;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 40px;
+    }
+
+    span:not(:last-child) {
+        margin-left: -20px;
+    }
+
+}
+
+.awards-row {
+
+    .card {
+        transition: .3s transform cubic-bezier(.155,1.105,.295,1.12);
+    }
+
+    .card:hover{
+        transform: scale(1.05);
+        cursor: pointer;
+    }
+}
+
+.custom-accordion {
+    .card {
+        margin-bottom: 1.5rem;
+        box-shadow: $box-shadow;
+    }
+
+    button {
+        padding-top: 1.5rem;
+        padding-bottom: 1.5rem;
+        color: $dark;
+        font-weight: 600;
+
+        i {
+            margin-right: 1rem;
+        }
+    }
+
+}
+
+footer {
+
+        a{
+            color: rgb(226, 226, 226);
+        }
+
+
+}
+
+
+
+//My custom classes
+* {
+    padding: 0;
+    margin: 0;
+
+}
+
+.skew-parent {
+    transform: skewY(-3deg);
+    margin-top: -40px;
+    padding-top: 40px;
+}
+
+.skew-child {
+    transform: skewY(3deg);
+}
+
+.smaller-text {
+    font-size: 0.6rem;
+}
+
+.awards-row {
+    height: 350px;
+}
+
+.separator-info {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 5rem;
+    background-color: $info;
+    transform: skewY(-2deg);
+    margin-bottom: -30px;
+    padding-bottom: 80px;
+}
+
+.separator-white {
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    transform: skewY(-2deg);
+    margin-top: -30px;
+    padding-top: 80px;
+
+}
+
+.floating-image {
+    margin-top: -12rem;
+    margin-left: -15rem;
+
+  }
+
+  .line {
+    position: relative;
+    margin: 0 auto;
+    width: 150px;
+}
+
+.line .curve {
+	border: 2px dashed rgb(214, 214, 214);
+    border-color: transparent rgb(214, 214, 214) transparent transparent;
+    height: 150px;
+    width: 100%;
+    border-radius: 0px 0px 558px 101px;
+    margin-top: -35px;
+    margin-bottom: -30px;
+    margin-left: -30px;
+}
+
+.line .curve-right {
+	border: 2px dashed rgb(214, 214, 214);
+	border-color: transparent transparent transparent rgb(214, 214, 214);
+	height: 150px;
+	width: 100%;
+	border-radius: 0 0 0 150px;
+    margin-bottom: -80px;
+    margin-left: 50px;
+}
+
+//Custom border bottom
+.custom-border-bottom {
+  border-bottom: 1px solid rgba(theme-color("light"), $custom-border-opacity);
+}
+
+.custom-border-bottom-dark {
+    border-bottom: 1px solid rgba(theme-color("dark"), $custom-border-opacity);
+}
+
+.hero-card{
+    border-radius: $border-radius $border-radius 4rem $border-radius;
+}
+
+.info-section-border{
+    border-radius: 0 4rem 0 4rem ;
+}
+
+@media (max-width: 978px) {
+    .credit-card{
+        .credit-card-number {
+            font-size: 0.85rem;
+        }
+    }
+
+    .floating-image{
+        margin: 2rem;
+    }
+
+    .line{
+        display: none;
+    }
+
+    .awards-row {
+        height: 100%;
+    }
+    
+    .sitemap{
+        margin-top: 50px;
+    }
+
+    footer {
+        button {
+            margin-bottom: 1rem;
+        }
+    }
+
+    }
+
